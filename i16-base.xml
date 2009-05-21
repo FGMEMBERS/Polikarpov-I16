@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Polikarpov-I16/i16-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/Polikarpov-I16/Sounds/i16-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Polikarpov-I16/Models/i16.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <panel>
+      <visibility archive="y">false</visibility>
+    </panel>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Polikarpov I16</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/i16-menu.xml"/>
+
+  </sim>
+ 
+  <input>
+    <keyboard include="Nasal/i16-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <i16>
+      <file>Aircraft/Polikarpov-I16/Nasal/doors.nas</file>
+      <file>Aircraft/Polikarpov-I16/Nasal/light.nas</file>
+      <file>Aircraft/Polikarpov-I16/Nasal/liveries.nas</file>
+      <file>Aircraft/Polikarpov-I16/Nasal/immat.nas</file>
+    </i16>
+  </nasal>
+  
+</PropertyList>

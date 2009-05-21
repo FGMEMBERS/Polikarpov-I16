@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="i16-jsbsim-cnf.xml"> -->
+<PropertyList include="i16-yasim-cnf.xml">
+
+  <sim>
+    <description>Polikarpov I16</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+
