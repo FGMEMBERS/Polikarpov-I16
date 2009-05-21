@@ -39,6 +39,8 @@
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
     <object-name>axeA</object-name>
+    <object-name>bosses</object-name>
+    <object-name>pito</object-name>
 
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
@@ -86,6 +88,8 @@
     <object-name>porteD1</object-name>
     <object-name>porteD2</object-name>
     <object-name>axeA</object-name>
+    <object-name>bosses</object-name>
+    <object-name>pito</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
