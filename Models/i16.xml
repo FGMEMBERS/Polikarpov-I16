@@ -188,7 +188,7 @@
     </axis>
   </animation>
 
-  <!-- Ailerons -->
+  <!-- Flaperons fonction ailerons -->
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
@@ -209,6 +209,37 @@
     <object-name>aileronD</object-name>
     <property>/surface-positions/right-aileron-pos-norm</property>
     <factor>20.0</factor>
+    <axis>
+      <x1-m> -0.219 </x1-m>
+      <y1-m>  1.637 </y1-m>
+      <z1-m> -0.236 </z1-m>
+      <x2-m> -0.594 </x2-m>
+      <y2-m>  4.032 </y2-m>
+      <z2-m> -0.174 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Flaperons fonction volets -->
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronG</object-name>
+    <property>/surface-positions/flaperons-pos-norm</property>
+    <factor>15.0</factor>
+    <axis>
+      <x1-m> -0.594 </x1-m>
+      <y1-m> -4.032 </y1-m>
+      <z1-m> -0.174 </z1-m>
+      <x2-m> -0.219 </x2-m>
+      <y2-m> -1.637 </y2-m>
+      <z2-m> -0.236 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronD</object-name>
+    <property>/surface-positions/flaperons-pos-norm</property>
+    <factor>15.0</factor>
     <axis>
       <x1-m> -0.219 </x1-m>
       <y1-m>  1.637 </y1-m>
