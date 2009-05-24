@@ -43,7 +43,7 @@
         <flap0 start="0.097" end="0.293" lift="1.3" drag="1.4"/>
         <flap1 start="0.310" end="0.794" lift="1.2" drag="1.1"/>
 
-        <control-input control="FLAP0" axis="/controls/flight/flaperons"/>
+        <control-input control="FLAP0" axis="/controls/gear/gear-down"/>
         <control-input control="FLAP1" axis="/controls/flight/aileron" split="true"/>
         <control-input control="FLAP1" axis="/controls/flight/aileron-trim"  split="true"/>
 
