@@ -14,10 +14,6 @@
       <splash-texture>Aircraft/Polikarpov-I16/i16-splash.png</splash-texture>
     </startup>
 
-    <sound>
-      <path archive="y">Aircraft/Polikarpov-I16/Sounds/i16-sound.xml</path>
-    </sound>
-
     <model>
       <path archive="y">Aircraft/Polikarpov-I16/Models/i16.xml</path>
       <livery>
@@ -25,19 +21,28 @@
       </livery>
     </model>
 
-    <panel>
-      <visibility archive="y">false</visibility>
-    </panel>
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Polikarpov-I16/Models/Effects/guns/submodels.xml</path>
+    </submodels>
+
+    <sound>
+      <path archive="y">Aircraft/Polikarpov-I16/Sounds/i16-sound.xml</path>
+    </sound>
 
     <multiplay>
       <chat_display>1</chat_display>
-      <generic>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
+      <generic> 
+        <int type="int">0</int>  <!-- 0 immat -->
+        <int type="int">0</int>  <!-- 1 immat -->
+        <int type="int">0</int>  <!-- 2 immat -->
+        <int type="int">0</int>  <!-- 3 immat -->
+        <int type="int">0</int>  <!-- 4 immat -->
+        <int type="int">0</int>  <!-- 5 immat -->
+        <int type="bool">0</int> <!-- 6 smoke -->
+        <int type="int">0</int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
       </generic>
     </multiplay>
 
@@ -46,6 +51,10 @@
       <key>
         <name>d</name>
         <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>e</name>
+        <desc>Guns fire</desc>
       </key>
     </help>
 
@@ -58,8 +67,14 @@
   </input>
  
   <nasal>
-    <i16>
+    <doors>
       <file>Aircraft/Polikarpov-I16/Nasal/doors.nas</file>
+    </doors>
+    <guns>
+      <file>Aircraft/Polikarpov-I16/Nasal/weapons.nas</file>
+      <file>Aircraft/Polikarpov-I16/Nasal/revi.nas</file>
+    </guns>
+    <i16>
       <file>Aircraft/Polikarpov-I16/Nasal/light.nas</file>
       <file>Aircraft/Polikarpov-I16/Nasal/liveries.nas</file>
       <file>Aircraft/Polikarpov-I16/Nasal/immat.nas</file>

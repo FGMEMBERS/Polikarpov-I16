@@ -7,7 +7,7 @@
     <desc>Passenger door</desc>
     <binding>
      <command>nasal</command>
-     <script>i16.doorsystem.passengerexport();</script>
+     <script>doors.doorsystem.passengerexport();</script>
     </binding>
   </key>
 
@@ -16,8 +16,23 @@
     <desc>Crew Ddor</desc>
     <binding>
      <command>nasal</command>
-     <script>i16.doorsystem.crewexport();</script>
+     <script>doors.doorsystem.crewexport();</script>
     </binding>
+  </key>
+
+  <key n="101">
+    <name>e</name>
+    <desc>Guns</desc>
+    <binding>
+      <command>nasal</command>
+      <script>guns.fire_MG()</script>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>nasal</command>
+        <script>guns.stop_MG()</script>
+      </binding>
+    </mod-up>
   </key>
 
 </PropertyList>

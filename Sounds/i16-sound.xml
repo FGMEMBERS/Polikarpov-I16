@@ -313,7 +313,7 @@
     <rain>
       <name>rain</name>
       <mode>looped</mode>
-      <path>Aircraft/H1-Racer/Sounds/rain_canopy.wav</path>
+      <path>Aircraft/Polikarpov-I16/Sounds/rain_canopy.wav</path>
       <condition>
         <greater-than>
           <property>/environment/metar/rain-norm</property>
@@ -334,6 +334,22 @@
       </pitch>
     </rain>
 
+    <guns> 
+      <name>gunfire</name>
+      <mode>looped</mode>
+      <path>Aircraft/Polikarpov-I16/Sounds/gunsfire.wav</path>
+      <condition> 
+        <property>controls/armament/trigger</property>
+        <property>ai/submodels/submodel/count</property>
+      </condition>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </guns>
+ 
   </fx>
 
 </PropertyList>
