@@ -4,7 +4,7 @@
 
   <default>
     <menu n="10">
-      <label>Gee Bee</label>
+      <label>Polikarpov I16</label>
       <enabled type="bool">true</enabled>
       <item>
         <label>Select Livery</label>

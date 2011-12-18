@@ -46,12 +46,7 @@
     <type>rotate</type>
     <object-name>needle1</object-name>
     <property>instrumentation/altimeter/indicated-altitude-ft</property>
-    <factor>0.36</factor>
-    <center> 
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
+    <factor> 0.36 </factor>
     <axis> 
       <x> -1 </x>
       <y>  0 </y>
@@ -63,12 +58,7 @@
     <type>rotate</type>
     <object-name>needle2</object-name>
     <property>instrumentation/altimeter/indicated-altitude-ft</property>
-    <factor>0.036</factor>
-    <center>   
-      <x-m> 0 </x-m> 
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
+    <factor> 0.036 </factor>
     <axis> 
       <x> -1 </x>
       <y>  0 </y>
@@ -80,17 +70,49 @@
     <type>rotate</type>
     <object-name>needle3</object-name>
     <property>instrumentation/altimeter/indicated-altitude-ft</property>
-    <factor>0.0036</factor>
-    <center>  
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
+    <factor> 0.0036 </factor>
     <axis> 
       <x> -1 </x>
       <y>  0 </y>
       <z>  0 </z>
     </axis>
   </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>bouton</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>0.009</step>
+        <min>0</min>
+        <max>60</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+  </animation>
+ 
+  <animation>
+    <type>pick</type>
+    <object-name>bouton</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>-0.009</step>
+        <min>0</min>
+        <max>60</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+  </animation>
     
 </PropertyList>
+

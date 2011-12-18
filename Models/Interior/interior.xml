@@ -14,6 +14,7 @@
     <object-name>inttourD</object-name>
     <object-name>intcockpit</object-name>
     <object-name>intdessus</object-name>
+    <object-name>pad</object-name>
 
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
@@ -31,16 +32,25 @@
     <object-name>intvitres</object-name>
   </animation>
 
+  <!-- We love the glass-shader effect, but for the pilot with bad eyes we need this help:-) -->
+  <animation>
+    <type>select</type>
+    <object-name>intvitres</object-name>
+    <condition>
+      <not-equals>
+        <property>/controls/glass-effect</property>
+        <value>0</value>
+      </not-equals>
+    </condition>
+  </animation>
+
   <!-- Tableau de bord -->
   <model>
     <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/panel.xml</path>
     <offsets>
-      <x-m> -0.521 </x-m>
+      <x-m> -0.330 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m>  0.425 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
+      <z-m>  0.515 </z-m>
     </offsets>
   </model>
 
@@ -54,6 +64,17 @@
     </offsets>
   </model>
 
+  <!-- Gear Lock -->
+  <model>
+    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/Gear/gear.xml</path>
+    <offsets>
+      <x-m> -0.236 </x-m>
+      <y-m>  0.209 </y-m>
+      <z-m>  0.441 </z-m>
+      <heading-deg> -90 </heading-deg>
+    </offsets>
+  </model>
+
   <animation>
     <name>IntPorteG</name>
     <object-name>intporteG</object-name>
@@ -64,7 +85,7 @@
     <type>rotate</type>
     <object-name>IntPorteG</object-name>
     <property>instrumentation/doors/crew/position-norm</property>
-    <factor> 175.0 </factor>
+    <factor> 175 </factor>
     <axis>
       <x1-m> -0.086 </x1-m>
       <y1-m> -0.411 </y1-m>
@@ -85,7 +106,7 @@
     <type>rotate</type>
     <object-name>IntPorteD</object-name>
     <property>instrumentation/doors/passenger/position-norm</property>
-    <factor> -175.0 </factor>
+    <factor> 175 </factor>
     <axis>
       <x1-m>  0.214 </x1-m>
       <y1-m>  0.390 </y1-m>

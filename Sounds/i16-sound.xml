@@ -3,23 +3,42 @@
 <PropertyList>
 
   <fx>
+    <crank>
+     <name>engstart</name>
+     <path>Sounds/engstart.wav</path>
+     <condition>
+       <property>/engines/engine[0]/cranking</property>
+     </condition>
+     <position>
+      <x>15.0</x>
+      <y>-5.0</y>
+      <z>0.0</z>
+     </position>
+     <volume>
+      <offset>0.4</offset>
+     </volume>
+    </crank>
 
-    <crank> 
-      <name>engstart</name>
-      <path>Sounds/engstart.wav</path>
-      <property>/engines/engine/cranking</property>
-      <volume> 
-        <property>/orientation/alpha-deg</property>
-        <type>log</type>
-        <min>0.5</min>
-        <max>1.0</max>
-      </volume>
-      <volume> 
-        <factor>1.2</factor>
-        <max>1.0</max>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
+    <crank>
+     <name>crank1</name>
+     <mode>looped</mode>
+     <path>Sounds/cranking.wav</path>
+     <condition>
+       <and>
+        <property>/engines/engine[0]/cranking</property>
+        <not>
+         <property>/engines/engine[0]/running</property>
+        </not>
+       </and>
+     </condition>
+     <position>
+      <x>15.0</x>
+      <y>-5.0</y>
+      <z>0.0</z>
+     </position>
+     <volume>
+      <offset>0.5</offset>
+     </volume>
     </crank>
 
     <crank> 
@@ -275,7 +294,7 @@
       <mode>once</mode>
       <path>Sounds/click.wav</path>
       <condition>
-        <property>sim/Sounds/switch</property>
+        <property>sim/sound/switch</property>
       </condition>
       <volume>
         <offset> 0.7 </offset>
@@ -295,7 +314,7 @@
       <path>Sounds/click.wav</path>
       <condition>
         <not>
-          <property>sim/Sounds/switch</property>
+          <property>sim/sound/switch</property>
         </not>
       </condition>
       <volume>
@@ -349,7 +368,31 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </guns>
- 
+
+    <gear>
+      <name>gear</name>
+      <mode>in-transit</mode>
+      <path>Aircraft/Polikarpov-I16/Sounds/gears.wav</path>
+      <property>gear/gear[0]/position-norm</property>
+      <volume>
+        <max>1</max>
+      </volume>
+    </gear>
+
+    <waltz>
+      <name>waltz</name>
+      <mode>looped</mode>
+      <path>Aircraft/Polikarpov-I16/Sounds/waltz.wav</path>
+       <condition>
+         <equals>
+           <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+           <value>100.00</value>
+         </equals>
+       </condition>
+        <volume>
+          <max>0.7</max>
+        </volume>
+      </waltz> 
   </fx>
 
 </PropertyList>

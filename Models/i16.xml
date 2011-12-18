@@ -10,16 +10,16 @@
 
       var self = cmdarg();
 
-      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
-      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-      
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
-      crew_door.alias(float_0);
-      passenger_door.alias(float_1);
-    </load>
+      self.getNode("instrumentation/doors/crew/position-norm", 1).alias(self.getNode("sim/multiplay/generic/float[0]", 1));
+      self.getNode("instrumentation/doors/passenger/position-norm", 1).alias(self.getNode("sim/multiplay/generic/float[1]", 1));
 
+      self.getNode("smoke/active", 1).alias(self.getNode("sim/multiplay/generic/int[6]", 1));
+      self.getNode("smoke/particlepersec", 1).alias(self.getNode("sim/multiplay/generic/int[7]", 1));
+      self.getNode("smoke/colors/knob-red", 1).alias(self.getNode("sim/multiplay/generic/float[3]", 1));
+      self.getNode("smoke/colors/knob-green", 1).alias(self.getNode("sim/multiplay/generic/float[4]", 1));
+      self.getNode("smoke/colors/knob-blue", 1).alias(self.getNode("sim/multiplay/generic/float[5]", 1));
+      self.getNode("smoke/particlepersec", 1).setValue(50);
+    </load>
     <unload>
       livery_update.stop();
       crew_door.unalias();
@@ -134,6 +134,26 @@
     <object-name>propblur</object-name>
   </animation>
 
+  <!-- Smoke -->
+  <model>
+    <path>Aircraft/Polikarpov-I16/Models/Effects/smoke/smoke.xml</path>
+    <offsets>
+      <x-m> -2.00 </x-m>
+      <y-m>  0.40 </y-m>
+      <z-m> -1.00 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <path>Aircraft/Polikarpov-I16/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.016 </z-m>
+    </offsets>
+  </model>
+
   <!-- Cranking effects -->
   <!-- Left -->
   <model>
@@ -142,9 +162,6 @@
       <x-m> -2.266 </x-m>
       <y-m> -0.287 </y-m>
       <z-m>  0.563 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -154,9 +171,6 @@
       <x-m> -2.266 </x-m>
       <y-m> -0.581 </y-m>
       <z-m>  0.204 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -166,9 +180,6 @@
       <x-m> -2.266 </x-m>
       <y-m> -0.507 </y-m>
       <z-m> -0.304 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -178,9 +189,6 @@
       <x-m> -2.266 </x-m>
       <y-m> -0.225 </y-m>
       <z-m> -0.535 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -191,9 +199,6 @@
       <x-m> -2.266 </x-m>
       <y-m>  0.287 </y-m>
       <z-m>  0.563 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -203,9 +208,6 @@
       <x-m> -2.266 </x-m>
       <y-m>  0.581 </y-m>
       <z-m>  0.204 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -215,9 +217,6 @@
       <x-m> -2.266 </x-m>
       <y-m>  0.507 </y-m>
       <z-m> -0.304 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -227,9 +226,6 @@
       <x-m> -2.266 </x-m>
       <y-m>  0.225 </y-m>
       <z-m> -0.535 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -294,28 +290,12 @@
   <!-- Intérieur -->
   <model>
     <path>Aircraft/Polikarpov-I16/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m>  0 </x-m>
-      <y-m>  0 </y-m>
-      <z-m>  0 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
   </model>
 
-  <!-- Imatriculation
+  <!-- Imatriculation -->
   <model>
     <path>Aircraft/Polikarpov-I16/Models/Immat/immat.xml</path>
-    <offsets>
-      <x-m>  0 </x-m>
-      <y-m>  0 </y-m>
-      <z-m>  0 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
-  </model> -->
+  </model>
 
   <!-- L'hélice --> 
   <animation>

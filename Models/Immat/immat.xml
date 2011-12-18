@@ -189,35 +189,4 @@
     </axis> 
   </animation>
 
-  <!-- Mouvement avec gouverne de direction -->
-  <animation>
-    <name>SurDirection</name>
-    <object-name>ImatFuselageL3</object-name>
-    <object-name>ImatFuselageL4</object-name>
-    <object-name>ImatFuselageL5</object-name>
-    <object-name>ImatFuselageL6</object-name>
-    <object-name>ImatFuselageR1</object-name>
-    <object-name>ImatFuselageR2</object-name>
-    <object-name>ImatFuselageR3</object-name>
-    <object-name>ImatFuselageR4</object-name>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>SurDirection</object-name>
-    <property>/controls/flight/rudder</property>
-    <factor>20</factor>
-    <center>
-      <x-m> 2.125 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.420 </z-m>
-    </center>
-    <axis>
-      <x> 0.000 </x>
-      <y> 0.000 </y>
-      <z> 1.000 </z>
-    </axis>
-  </animation>
-
 </PropertyList>
-<

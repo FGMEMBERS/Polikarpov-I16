@@ -35,5 +35,41 @@
     </mod-up>
   </key>
 
+      <!-- toggle smoke -->
+      <key n="106">
+        <name>j</name>
+        <desc>Toggle smoke</desc>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeToggle()</script>
+        </binding>
+      </key>
+      <!-- Modify smoke particle per second -->
+      <key n="108">
+        <name>l</name>
+        <desc>Decrease smoke</desc>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeCounter(-1)</script>
+        </binding>
+      </key>
+      <key n="76">
+        <name>L</name>
+        <desc>Increase smoke</desc>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeCounter(1)</script>
+        </binding>
+      </key>
+      <!-- select smoke color (first, second, third, fourth color) -->
+      <key n="107">
+        <name>k</name>
+        <desc>Select smoke color</desc>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeColor()</script>
+        </binding>
+      </key>
+
 </PropertyList>
 
