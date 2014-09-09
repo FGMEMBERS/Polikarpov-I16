@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+    <startup>
+      <splash-texture>Aircraft/Polikarpov-I16/i16-splash.png</splash-texture>
+    </startup>
+
+    <model>
+      <path archive="y">Aircraft/Polikarpov-I16/Models/i16.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Polikarpov-I16/Models/Effects/guns/submodels.xml</path>
+    </submodels>
+
+    <sound>
+      <path archive="y">Aircraft/Polikarpov-I16/Sounds/i16-sound.xml</path>
+    </sound>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
+        <float n="3" alias="/smoke/colors/knob-red">1</float>                      <!-- 3 smoke mixer red setting -->
+        <float n="4" alias="/smoke/colors/knob-green">1</float>                    <!-- 4 smoke mixer green setting -->
+        <float n="5" alias="/smoke/colors/knob-blue">1</float>                     <!-- 5 smoke mixer blue setting -->
+        <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Polikarpov I16</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>e</name>
+        <desc>Guns fire</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/i16-menu.xml"/>
+
+  </sim>
+ 
+  <input>
+    <keyboard include="Nasal/i16-keyboard.xml"/>
+  </input>
+
+  <controls>
+    <glass-effect type="bool">1</glass-effect>
+  </controls>
+
+  <!-- smoke -->
+  <smoke>
+    <active type="int">0</active>
+    <particlepersec> 50 </particlepersec>
+    <color>0</color>
+    <red type="float">   1 </red>
+    <green type="float"> 1 </green>
+    <blue type="float">  1 </blue>
+    <colors>
+      <color><!-- first default white -->
+        <red type="float">   1 </red>
+        <green type="float"> 1 </green>
+        <blue type="float">  1 </blue>
+        <scale type="bool">  0 </scale>
+      </color>
+      <!-- that was the spanish flag in 1937 -->
+      <color><!-- second default red -->
+        <red type="float">   1 </red>
+        <green type="float"> 0 </green>
+        <blue type="float">  0 </blue>
+        <scale type="bool">  0 </scale>
+      </color>
+      <color><!-- third default yellow -->
+        <red type="float">   1 </red>
+        <green type="float"> 1 </green>
+        <blue type="float">  0 </blue>
+        <scale type="bool">  0 </scale>
+      </color>
+      <color><!-- fourth default purple -->
+        <red type="float">   0.7 </red>
+        <green type="float"> 0.0 </green>
+        <blue type="float">  1.0 </blue>
+        <scale type="bool">  0.0 </scale>
+      </color>
+      <knob-red type="float">   0 </knob-red>
+      <knob-green type="float"> 0 </knob-green>
+      <knob-blue type="float">  0 </knob-blue>
+    </colors>
+  </smoke>
+
+  <!-- Flightgear Rallye Watch  -->
+  <instrumentation>
+    <frw>
+      <running type="bool">0</running>
+      <btn-mode type="bool">0</btn-mode>
+      <btn-reset type="bool">0</btn-reset>
+      <btn-start-stop type="bool">0</btn-start-stop>
+      <flight-time>
+        <start-time type="double">0</start-time>
+        <accu type="double">0</accu>
+        <total type="double">0</total>
+        <hours type="int">0</hours>
+        <minutes type="int">0</minutes>
+        <seconds type="int">0</seconds>
+      </flight-time>
+    </frw>
+  </instrumentation>
+  <!-- END Flightgear Rallye Watch  -->
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Polikarpov-I16/Nasal/doors.nas</file>
+    </doors>
+    <guns>
+      <file>Aircraft/Polikarpov-I16/Nasal/weapons.nas</file>
+      <file>Aircraft/Polikarpov-I16/Nasal/revi.nas</file>
+    </guns>
+    <i16>
+      <file>Aircraft/Polikarpov-I16/Nasal/frw.nas</file>
+      <file>Aircraft/Polikarpov-I16/Nasal/light.nas</file>
+      <file>Aircraft/Polikarpov-I16/Nasal/liveries.nas</file>
+      <file>Aircraft/Polikarpov-I16/Nasal/smoke.nas</file>
+      <file>Aircraft/Polikarpov-I16/Nasal/immat.nas</file>
+    </i16>
+  </nasal>
+  
+</PropertyList>
+

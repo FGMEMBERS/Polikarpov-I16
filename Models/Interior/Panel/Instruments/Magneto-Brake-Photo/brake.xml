@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>brake.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fond</object-name>
+    <object-name>lampBrake</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fond</object-name>
+    <object-name>lampBrake</object-name>
+    <emission>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+	<!-- Control-lamps for breaks -->
+  <animation>
+    <type>material</type>
+    <object-name>lampBrake</object-name>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>lampBrake</object-name>
+    <condition>
+      <or>
+        <not-equals>
+          <property>/controls/gear/brake-parking</property>
+          <value>0</value>
+        </not-equals>
+        <not-equals>
+          <property>/controls/gear/brake-left</property>
+          <value>0</value>
+        </not-equals>
+        <not-equals>
+          <property>/controls/gear/brake-right</property>
+          <value>0</value>
+        </not-equals>
+      </or>
+    </condition>
+  </animation>
+
+</PropertyList>
+

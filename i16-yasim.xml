@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  Polikarpov I16 yasim config. 2009 BARANGER Emmanuel
+                     Updated with Melchior's script 2011
+
+      sources      : http://en.wikipedia.org/wiki/Polikarpov_I-16
+
+      Wingspan     :  9.00 m (29 ft 6 in)
+      Lenght       :  6.13 m (20 ft 1 in)
+      Height       :  3.25 m (10 ft 8 in)
+      Empty weight : 1490 kg (3285 lb)
+      Engines      : 1 x Shvetsov M-63 1100 hp
+-->
+
+<airplane mass="3285">
+
+  <!-- Approach configuration -->
+  <approach speed="75" aoa="7" fuel="0.2">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+    <control-setting axis="/controls/flight/flaps" value="1.0"/>
+  </approach>
+
+  <!-- Cruise configuration -->
+  <cruise speed="250" alt="6000" fuel="0.5">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+  </cruise>
+
+  <cockpit x="-0.037" y="0" z="0.719"/>
+
+  <fuselage ax=" 2.650" ay="0" az="0.021" bx=" 2.363" by="0" bz="0.040" width="1.4" taper="0.75" midpoint="1"/>
+  <fuselage ax=" 2.363" ay="0" az="0.040" bx="-0.323" by="0" bz="0.021" width="1.4" taper="0.75" midpoint="0"/>
+  <fuselage ax="-0.323" ay="0" az="0.021" bx="-2.880" by="0" bz="0.021" width="1.05" taper="0.20" midpoint="0"/>
+
+  <wing x="0.908" y="0.621" z="-0.241"
+        chord="2.182"
+        length="3.855"
+        taper="0.50"
+        camber="0.026"
+        sweep="-2">
+        <stall aoa="16" width="4" peak="1.5"/>
+        <flap0 start="0.26" end="0.890" lift="1.3" drag="1.4"/>
+        <flap1 start="0.26" end="0.890" lift="1.2" drag="1.1"/>
+
+        <control-input control="FLAP0" axis="/controls/gear/gear-down"/>
+        <control-input control="FLAP1" axis="/controls/flight/aileron" split="true"/>
+        <control-input control="FLAP1" axis="/controls/flight/aileron-trim"  split="true"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flaperons-pos-norm"/>
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="5"/>
+  </wing>
+
+  <hstab x="-2.379" y="0.213" z="0.018"
+         chord="1.502"
+         length="1.54"
+         taper="0.42"
+         sweep="12">
+         <stall aoa="16" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
+
+         <control-input control="FLAP0" axis="/controls/flight/elevator"/>
+         <control-input control="FLAP0" axis="/controls/flight/elevator-trim"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-2.130" y="0" z="0.095"
+         chord="1.892"
+         length="1.478"
+         taper="0.46"
+         sweep="18">
+         <stall aoa="14" width="3" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
+
+         <control-input control="FLAP0" axis="/controls/flight/rudder"  invert="true"/>
+         <control-input control="FLAP0" axis="/controls/flight/rudder-trim"  invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
+  </vstab>
+
+  <!-- Engines   source            : http://en.wikipedia.org/wiki/Shvetsov_M-63
+
+                 name              : Shvetsov M-63
+                 type              : Nine-cylinder single-row supercharged air-cooled radial engine
+                 power             : 1100 hp
+                 weight            : 1,184 lb (537 kg)
+                 Displacement      : 1823 in3 (29.8 l)
+                 Compression       : 6.4:1
+                 Propeller diameter: 2.8 m
+  -->
+  <propeller x="2.002" y="0" z="0.040"
+             mass="1184"
+             moment="35"
+             radius="1.4"
+             cruise-speed="226"
+             cruise-alt="5000"
+             cruise-rpm="2200"
+             cruise-power="1000"
+             takeoff-power="730"
+             takeoff-rpm="2300"
+             min-rpm="200"
+             max-rpm="2300"
+             fine-stop="0.8"
+             coarse-stop="2">
+             <actionpt x="2.766" y="0" z="0.030" />
+             <piston-engine eng-rpm="2300"
+                            eng-power="1200"
+                            displacement="1823"
+                            compression="6.4"/>
+              <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
+              <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
+              <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
+              <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
+              <control-input control="ADVANCE" axis="/controls/engines/engine[0]/propeller-pitch"/>
+  </propeller>
+
+  <!-- Left wheel -->
+  <gear x="1.714" y="1.026" z="-1.673" 
+        compression="0.1" 
+        spring="0.8" 
+        on-solid="1" >
+        <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-output control="EXTEND" prop="gear/gear[0]/position-norm"/>
+        <control-speed control="EXTEND" transition-time="4"/>
+  </gear>
+
+  <!-- Right wheel -->
+  <gear x="1.714" y="-1.026" z="-1.673"
+        compression="0.1" 
+        spring="0.8" 
+        on-solid="1" >
+        <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-output control="EXTEND" prop="gear/gear[1]/position-norm"/>
+        <control-speed control="EXTEND" transition-time="6"/>
+  </gear>
+
+  <!-- Tail wheel -->
+  <gear x="-2.590" y="0" z="-0.451"
+        compression="0.15" 
+        spring="0.8"
+        on-solid="1"
+        sfric="1"
+        dfric="1">
+       <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="0.5" dst1="-0.5"/>
+  </gear>
+
+  <tank x="0.456" y="0" z="-0.310" capacity="580" />
+
+  <!-- Mass distribution
+  <ballast x="1.58" y="0.0" z="-2.0" mass="350"/>
+  -->
+</airplane>
+

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <key n="68">
+    <name>D</name>
+    <desc>Passenger door</desc>
+    <binding>
+     <command>nasal</command>
+     <script>doors.doorsystem.passengerexport();</script>
+    </binding>
+  </key>
+
+  <key n="100">
+    <name>d</name>
+    <desc>Crew Ddor</desc>
+    <binding>
+     <command>nasal</command>
+     <script>doors.doorsystem.crewexport();</script>
+    </binding>
+  </key>
+
+  <key n="101">
+    <name>e</name>
+    <desc>Guns</desc>
+    <binding>
+      <command>nasal</command>
+      <script>guns.fire_MG()</script>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>nasal</command>
+        <script>guns.stop_MG()</script>
+      </binding>
+    </mod-up>
+  </key>
+
+      <!-- toggle smoke -->
+      <key n="106">
+        <name>j</name>
+        <desc>Toggle smoke</desc>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeToggle()</script>
+        </binding>
+      </key>
+      <!-- Modify smoke particle per second -->
+      <key n="108">
+        <name>l</name>
+        <desc>Decrease smoke</desc>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeCounter(-1)</script>
+        </binding>
+      </key>
+      <key n="76">
+        <name>L</name>
+        <desc>Increase smoke</desc>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeCounter(1)</script>
+        </binding>
+      </key>
+      <!-- select smoke color (first, second, third, fourth color) -->
+      <key n="107">
+        <name>k</name>
+        <desc>Select smoke color</desc>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeColor()</script>
+        </binding>
+      </key>
+
+</PropertyList>
+

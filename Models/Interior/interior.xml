@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>intporteG</object-name>
+    <object-name>inttourG</object-name>
+    <object-name>intporteD</object-name>
+    <object-name>inttourD</object-name>
+    <object-name>intcockpit</object-name>
+    <object-name>intdessus</object-name>
+    <object-name>pad</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+  </animation>
+
+  <!-- We love the glass-shader effect, but for the pilot with bad eyes we need this help:-) -->
+  <animation>
+    <type>select</type>
+    <object-name>intvitres</object-name>
+    <condition>
+      <not-equals>
+        <property>/controls/glass-effect</property>
+        <value>0</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+  <!-- Tableau de bord -->
+  <model>
+    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -0.330 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.515 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Polikarpov-I16/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -0.122 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.296 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Gear Lock -->
+  <model>
+    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/Gear/gear.xml</path>
+    <offsets>
+      <x-m> -0.236 </x-m>
+      <y-m>  0.209 </y-m>
+      <z-m>  0.441 </z-m>
+      <heading-deg> -90 </heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <name>IntPorteG</name>
+    <object-name>intporteG</object-name>
+    <object-name>inttourG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteG</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <factor> 175 </factor>
+    <axis>
+      <x1-m> -0.086 </x1-m>
+      <y1-m> -0.411 </y1-m>
+      <z1-m>  0.408 </z1-m>
+      <x2-m>  0.214 </x2-m>
+      <y2-m> -0.390 </y2-m>
+      <z2-m>  0.408 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>IntPorteD</name>
+    <object-name>intporteD</object-name>
+    <object-name>inttourD</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteD</object-name>
+    <property>instrumentation/doors/passenger/position-norm</property>
+    <factor> 175 </factor>
+    <axis>
+      <x1-m>  0.214 </x1-m>
+      <y1-m>  0.390 </y1-m>
+      <z1-m>  0.408 </z1-m>
+      <x2-m> -0.086 </x2-m>
+      <y2-m>  0.411 </y2-m>
+      <z2-m>  0.408 </z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>
+
