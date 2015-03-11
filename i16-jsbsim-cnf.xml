@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="i16-base.xml">
+
+  <sim>
+
+    <description>Polikarpov I16 (JSBsim)</description>
+    <flight-model>jsb</flight-model>
+    <aero>i16-jsbsim</aero>
+
+  </sim>
+  
+  <controls>
+  	<gear>
+  		<brake-parking>1</brake-parking>
+  	</gear>
+  </controls>
+  
+  
+
+</PropertyList>

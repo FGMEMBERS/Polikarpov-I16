@@ -4,9 +4,9 @@
 
   <sim include="Nasal/views.xml">
 
-    <author>BARANGER Emmanuel (3D/FDM)</author>
-    <aircraft-version>0.1</aircraft-version>
-    <status>Alpha</status>
+    <author>Lake of Constance Hangar :: M.Kraus (Original from E.BARANGER) </author>
+    <aircraft-version>0.2.6</aircraft-version>
+    <status>0.2.6</status>
 
     <fuel-fraction>1.0</fuel-fraction>
 
@@ -25,7 +25,7 @@
 
     <submodels> 
       <serviceable type="bool">true</serviceable>
-      <path>Aircraft/Polikarpov-I16/Models/Effects/guns/submodels.xml</path>
+      <path>Aircraft/Polikarpov-I16/Models/submodels.xml</path>
     </submodels>
 
     <sound>
@@ -35,41 +35,69 @@
     <multiplay>
       <chat_display>1</chat_display>
       <generic> 
-        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
-        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
-        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
-        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
-        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
-        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
-        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
-        <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
-        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
+        <int type="int" n="0">  0 </int>                                           <!-- 0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!-- 1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!-- 2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!-- 3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!-- 4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!-- 5 immat -->
+        <int type="int" n="6" alias="/smoke/active">0</int>                        <!-- 6 start color smoke -->
+        <int type="int" n="7" alias="/para/jump-signal">0</int>                    <!-- 7 pilot jump out -->                   
+        <int n="8" type="int">0</int>          		 																 <!-- 8 engine startup smoke -->            
+        <int n="9" type="int">0</int>         					 			 			 							 <!-- 9 for multiplayer fire after crash -->
+        <int n="10" alias="controls/armament/trigger" />  						<!-- int[10] reserved for bombable mode -->
+        <int n="11" alias="/controls/armament/trigger1" />            <!-- int[11] reserved for bombable mode -->
         <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
         <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
-        <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
-        <float n="3" alias="/smoke/colors/knob-red">1</float>                      <!-- 3 smoke mixer red setting -->
-        <float n="4" alias="/smoke/colors/knob-green">1</float>                    <!-- 4 smoke mixer green setting -->
-        <float n="5" alias="/smoke/colors/knob-blue">1</float>                     <!-- 5 smoke mixer blue setting -->
-        <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
+        <float n="3" alias="/smoke/red">1</float>                                 <!-- 2 smoke mixer red setting -->
+        <float n="4" alias="/smoke/green">1</float>                               <!-- 2 smoke mixer red setting -->
+        <float n="5" alias="/smoke/blue">1</float>                                <!-- 2 smoke mixer red setting -->
+        <string n="9" type="string" />                                            <!-- string[9] reserved for bombable mode -->
       </generic>
     </multiplay>
 
+		<!-- Head-up display settings 
+		<hud>
+			<path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/Hud/default.xml</path>
+			<path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/Hud/NTPS.xml</path>
+			<visibility type="bool">false</visibility>
+			<visibility type="bool">false</visibility>
+		</hud>
+		-->
+		
     <help>
       <title>Polikarpov I16</title>
       <key>
         <name>d</name>
-        <desc>Open/Close canopy</desc>
+        <desc>Open/Close left hatch</desc>
       </key>
       <key>
         <name>e</name>
         <desc>Guns fire</desc>
       </key>
+      <key>
+        <name>j</name>
+        <desc>Start colored smoke</desc>
+      </key>
+      <key>
+        <name>k</name>
+        <desc>change colored smoke</desc>
+      </key>
+      <key>
+        <name>&lt;</name>
+        <desc>Pilot jump</desc>
+      </key>
     </help>
 
     <menubar include="Dialogs/i16-menu.xml"/>
-
   </sim>
  
+
+	<!-- turns off GA traffic -->
+	<ai-traffic>
+		<enabled type="bool">false</enabled>
+	</ai-traffic>
+
   <input>
     <keyboard include="Nasal/i16-keyboard.xml"/>
   </input>
@@ -78,43 +106,61 @@
     <glass-effect type="bool">1</glass-effect>
   </controls>
 
+  <para>
+    <altitude-at-exit-ft type="double">0.0</altitude-at-exit-ft>
+    <altitude-ft type="double">0.0</altitude-ft>
+    <heading-deg type="double">0.0</heading-deg>
+    <internal>
+      <x-offset-m type="double">0.0</x-offset-m>
+      <y-offset-m type="double">0.0</y-offset-m>
+      <z-offset-m type="double">0.0</z-offset-m>
+      <heading-deg type="double">0.0</heading-deg>
+    </internal>
+    <jump-signal type="int">0</jump-signal>
+    <latitude-deg type="double">0.0</latitude-deg>
+    <longitude-deg type="double">0.0</longitude-deg>
+    <pitch-deg type="double">0.0</pitch-deg>
+    <roll-deg type="double">0.0</roll-deg>
+    <speed type="double">0.0</speed>
+  </para>
+
   <!-- smoke -->
   <smoke>
     <active type="int">0</active>
-    <particlepersec> 50 </particlepersec>
+    <particlepersec>50</particlepersec>
     <color>0</color>
-    <red type="float">   1 </red>
-    <green type="float"> 1 </green>
-    <blue type="float">  1 </blue>
+    <red type="float">1.0</red>
+    <green type="float">1.0</green>
+    <blue type="float">1.0</blue>
     <colors>
       <color><!-- first default white -->
-        <red type="float">   1 </red>
-        <green type="float"> 1 </green>
-        <blue type="float">  1 </blue>
-        <scale type="bool">  0 </scale>
+        <red type="float">1.0</red>
+        <green type="float">1.0</green>
+        <blue type="float">1.0</blue>
+        <scale type="bool">0</scale>
       </color>
       <!-- that was the spanish flag in 1937 -->
       <color><!-- second default red -->
-        <red type="float">   1 </red>
-        <green type="float"> 0 </green>
-        <blue type="float">  0 </blue>
-        <scale type="bool">  0 </scale>
+        <red type="float">1.0</red>
+        <green type="float">0.0</green>
+        <blue type="float">0.0</blue>
+        <scale type="bool">0</scale>
       </color>
       <color><!-- third default yellow -->
-        <red type="float">   1 </red>
-        <green type="float"> 1 </green>
-        <blue type="float">  0 </blue>
-        <scale type="bool">  0 </scale>
+        <red type="float">1.0</red>
+        <green type="float">1.0</green>
+        <blue type="float">0.0</blue>
+        <scale type="bool">0</scale>
       </color>
       <color><!-- fourth default purple -->
-        <red type="float">   0.7 </red>
-        <green type="float"> 0.0 </green>
-        <blue type="float">  1.0 </blue>
-        <scale type="bool">  0.0 </scale>
+        <red type="float">0.7</red>
+        <green type="float">0.0</green>
+        <blue type="float">1</blue>
+        <scale type="bool">0</scale>
       </color>
-      <knob-red type="float">   0 </knob-red>
-      <knob-green type="float"> 0 </knob-green>
-      <knob-blue type="float">  0 </knob-blue>
+      <knob-red type="float">0.0</knob-red>
+      <knob-green type="float">0.0</knob-green>
+      <knob-blue type="float">0.0</knob-blue>
     </colors>
   </smoke>
 
@@ -134,8 +180,14 @@
         <seconds type="int">0</seconds>
       </flight-time>
     </frw>
+   <!-- END Flightgear Rallye Watch  -->
+
+		<!-- RADAR in the HUD -->
+		<radar>
+			<range type="int">40</range>
+		</radar>
   </instrumentation>
-  <!-- END Flightgear Rallye Watch  -->
+
 
   <nasal>
     <doors>
@@ -145,14 +197,17 @@
       <file>Aircraft/Polikarpov-I16/Nasal/weapons.nas</file>
       <file>Aircraft/Polikarpov-I16/Nasal/revi.nas</file>
     </guns>
-    <i16>
+    <frw>
       <file>Aircraft/Polikarpov-I16/Nasal/frw.nas</file>
+    </frw>
+    <i16>
+      <file>Aircraft/Polikarpov-I16/Nasal/i16.nas</file>
       <file>Aircraft/Polikarpov-I16/Nasal/light.nas</file>
       <file>Aircraft/Polikarpov-I16/Nasal/liveries.nas</file>
       <file>Aircraft/Polikarpov-I16/Nasal/smoke.nas</file>
       <file>Aircraft/Polikarpov-I16/Nasal/immat.nas</file>
+      <file>Aircraft/Polikarpov-I16/Nasal/jumpout.nas</file>
     </i16>
   </nasal>
   
 </PropertyList>
-

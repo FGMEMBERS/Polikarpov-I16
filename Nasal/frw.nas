@@ -79,21 +79,25 @@ var frw_mode = func {
 var frw_control = func {
   var frw_mode = props.globals.getNode(p~"btn-mode");
   if(frw_mode.getBoolValue()){
-    var frw_agl  = getprop("/position/gear-agl-ft");
+    var frw_agl  = getprop("/position/altitude-agl-ft") or 0;
     var airspeed = getprop("/instrumentation/airspeed-indicator/indicated-speed-kt");
     var running  = props.globals.getNode(p~"running");
     var crashed  = props.globals.getNode("/sim/crashed");
 
-      if(frw_agl > 3 and !running.getBoolValue() and !crashed.getBoolValue()){
+      if(frw_agl > 5 and !running.getBoolValue() and !crashed.getBoolValue()){
         frw_start_stop();
       }
-      if(frw_agl < 3 and running.getBoolValue() and airspeed < 20.0 or crashed.getBoolValue()){
+      if(frw_agl < 5 and running.getBoolValue() and airspeed < 20.0 or crashed.getBoolValue()){
         var accu = getprop(p~"flight-time/accu");
         accu += getprop("/sim/time/elapsed-sec") - getprop(p~"flight-time/start-time");
         setprop(p~"running",0);
         setprop(p~"flight-time/accu", accu);
         frw_show(accu);
       }
+
+      # fix the bug, if the aircraft chrashed with frw_mode the stopwatch was continued
+      if(crashed.getBoolValue()) frw_mode.setBoolValue(0);
+
     settimer(frw_control, 1);
   }
 }

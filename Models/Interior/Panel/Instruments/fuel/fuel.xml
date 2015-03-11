@@ -8,6 +8,7 @@
     <object-name>face</object-name>
     <object-name>fond</object-name>
     <object-name>visses</object-name>
+    <object-name>panel1</object-name>
     <object-name>panel2</object-name>
     <object-name>needle</object-name>
 
@@ -44,13 +45,10 @@
   <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
-    <property>/consumables/fuel/tank[0]/level-gal_us</property>
+    <property>/consumables/fuel/total-fuel-gal_us</property>
     <interpolation>
-      <entry><ind>   0 </ind><dep>  0 </dep></entry>
-      <entry><ind>  30 </ind><dep> 22 </dep></entry>
-      <entry><ind>  60 </ind><dep> 45 </dep></entry>
-      <entry><ind>  90 </ind><dep> 85 </dep></entry>
-      <entry><ind> 100 </ind><dep> 90 </dep></entry>
+      <entry><ind>   0   </ind><dep>  0 </dep></entry>
+      <entry><ind>  93.5 </ind><dep> 90 </dep></entry>
     </interpolation>
     <center>
       <x-m>  0.001 </x-m>

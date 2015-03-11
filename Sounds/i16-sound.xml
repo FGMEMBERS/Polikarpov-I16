@@ -62,12 +62,12 @@
     <engine> 
       <name>engineslowrun</name>
       <mode>looped</mode>
-      <path>Sounds/wasp.wav</path>
+      <path>Aircraft/Polikarpov-I16/Sounds/low.wav</path>
       <condition> 
         <property>/engines/engine/running</property>
         <less-than> 
           <property>/engines/engine/rpm</property>
-          <value> 1500 </value>
+          <value> 1600 </value>
         </less-than>
       </condition>
       <volume> 
@@ -95,7 +95,7 @@
     <engine>
       <name>enginerun</name>
       <mode>looped</mode>
-      <path>Sounds/wasp.wav</path>
+      <path>Aircraft/Polikarpov-I16/Sounds/middle.wav</path>
       <condition>
         <property>/engines/engine/running</property>
         <greater-than-equals> 
@@ -392,7 +392,22 @@
         <volume>
           <max>0.7</max>
         </volume>
-      </waltz> 
+      </waltz>
+
+    <crash>
+      <name>intense ground contact</name>
+      <mode>once</mode>
+      <path>Aircraft/Polikarpov-I16/Sounds/crashed.wav</path>
+      <property>/sim/crashed</property>
+      <volume>
+          <factor>1</factor>
+      </volume>
+      <pitch>
+          <factor>1</factor>
+      </pitch>
+      <reference-dist>500</reference-dist>
+      <max-dist>1000</max-dist>
+    </crash>
   </fx>
 
 </PropertyList>

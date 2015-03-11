@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 
 <PropertyList>
 
@@ -6,16 +6,84 @@
 
   <animation>
     <!-- Objets opaques -->
+    <object-name>btnStart</object-name>
+    <object-name>fireLamps</object-name>
+    <object-name>knobBlue</object-name>
+    <object-name>knobGreen</object-name>
+    <object-name>knobRed</object-name>
+    <object-name>knobSmoke</object-name>
+    <object-name>lamp1stColor</object-name>
+    <object-name>lamp2ndColor</object-name>
+    <object-name>lamp3rdColor</object-name>
+    <object-name>lamp4thColor</object-name>
+    <object-name>lampBatt</object-name>
+    <object-name>lampBrake</object-name>
+    <object-name>lampMagneto</object-name>
+    <object-name>lampSmoke</object-name>
+    <object-name>mixtureLever</object-name>
+    <object-name>mixtureSupport</object-name>
     <object-name>panel</object-name>
+    <object-name>plane1stColor</object-name>
+    <object-name>plane2ndColor</object-name>
+    <object-name>plane3rdColor</object-name>
+    <object-name>plane4thColor</object-name>
+    <object-name>scrollKnobBlue</object-name>
+    <object-name>scrollKnobGreen</object-name>
+    <object-name>scrollKnobRed</object-name>    
+    <object-name>sel1stColor</object-name>
+    <object-name>sel2ndColor</object-name>
+    <object-name>sel3rdColor</object-name>
+    <object-name>sel4thColor</object-name>
+    <object-name>switch1stColor</object-name>
+    <object-name>switch2ndColor</object-name>
+    <object-name>switch3rdColor</object-name>
+    <object-name>switch4thColor</object-name>
     <object-name>switchGlaswiper</object-name>
+    <object-name>switchBatt</object-name>
+    <object-name>switchMagneto</object-name>
+    <object-name>switchSmoke</object-name>
+    <object-name>throttleLever</object-name>
+    <object-name>throttleSupport</object-name>
 
     <!-- Objets transparents -->
   </animation>
 
   <animation>
     <type>material</type>
+    <object-name>btnStart</object-name>
+    <object-name>fireLamps</object-name>
+    <object-name>knobBlue</object-name>
+    <object-name>knobGreen</object-name>
+    <object-name>knobRed</object-name>
+    <object-name>knobSmoke</object-name>
+    <object-name>lamp1stColor</object-name>
+    <object-name>lamp2ndColor</object-name>
+    <object-name>lamp3rdColor</object-name>
+    <object-name>lamp4thColor</object-name>
+    <object-name>lampBatt</object-name>
+    <object-name>lampBrake</object-name>
+    <object-name>lampMagneto</object-name>
+    <object-name>lampSmoke</object-name>
+    <object-name>mixtureLever</object-name>
+    <object-name>mixtureSupport</object-name>
     <object-name>panel</object-name>
+    <object-name>plane1stColor</object-name>
+    <object-name>plane2ndColor</object-name>
+    <object-name>plane3rdColor</object-name>
+    <object-name>plane4thColor</object-name>
+    <object-name>switch1stColor</object-name>
+    <object-name>switch2ndColor</object-name>
+    <object-name>switch3rdColor</object-name>
+    <object-name>switch4thColor</object-name>
     <object-name>switchGlaswiper</object-name>
+    <object-name>switchBatt</object-name>
+    <object-name>switchMagneto</object-name>
+    <object-name>switchSmoke</object-name>
+    <object-name>throttleLever</object-name>
+    <object-name>throttleSupport</object-name>
+    <condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+		</condition>
     <emission>
       <red>   0.50 </red>
       <green> 0.25 </green>
@@ -26,7 +94,7 @@
 
   <!-- MagneticCompass -->
   <model>
-    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/MagneticCompass/compas.xml</path>
+    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/compas/compas.xml</path>
     <offsets>
       <x-m> 0.038 </x-m>
       <y-m> 0.000 </y-m>
@@ -98,61 +166,12 @@
 
   <!-- FlightRallyeWath -->
   <model>
-    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/FlightRallyeWatch/frw.xml</path>
+    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/frw/frw.xml</path>
     <offsets>
       <x-m>  0.055 </x-m>
       <y-m>  0.140 </y-m>
       <z-m>  0.050 </z-m>
       <heading-deg>  -10 </heading-deg>
-    </offsets>
-  </model>
-
-  <!-- System smoke -->
-  <model>
-    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/System-Smoke/setting.xml</path>
-    <offsets>
-      <x-m>  0.04312 </x-m>
-      <y-m> -0.14600 </y-m>
-      <z-m> -0.01400 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/System-Smoke/smoke.xml</path>
-    <offsets>
-      <x-m> 0.04405 </x-m>
-      <y-m> 0.00000 </y-m>
-      <z-m> 0.09266 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Photo -->
-  <model>
-    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/Magneto-Brake-Photo/photo.xml</path>
-    <offsets>
-      <x-m>  0.04469 </x-m>
-      <y-m> -0.11200 </y-m>
-      <z-m>  0.06500 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Magneto -->
-  <model>
-    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/Magneto-Brake-Photo/magneto.xml</path>
-    <offsets>
-      <x-m>  0.04312 </x-m>
-      <y-m> -0.02522 </y-m>
-      <z-m> -0.08684 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Brake -->
-  <model>
-    <path>Aircraft/Polikarpov-I16/Models/Interior/Panel/Instruments/Magneto-Brake-Photo/brake.xml</path>
-    <offsets>
-      <x-m>  0.04312 </x-m>
-      <y-m>  0.03647 </y-m>
-      <z-m> -0.08684 </z-m>
     </offsets>
   </model>
 
@@ -186,45 +205,1055 @@
     <alignment>center-center</alignment>
     <offsets>
       <x-m>  0.046 </x-m>
-      <y-m>  0.000 </y-m>
+      <y-m>  0.0 </y-m>
       <z-m>  0.008 </z-m>
     </offsets>
   </text>
 
-  <!-- ############# THE GLASWIPER ###############-->
+	<!-- Control-lamps for fireguns -->
   <animation>
-    <type>rotate</type>
-    <object-name>switchGlaswiper</object-name>
-    <property>/controls/glass-effect</property>
-    <factor>-60</factor>
-    <center>
-      <x-m>  0.040 </x-m>
-      <y-m> -0.166 </y-m>
-      <z-m> -0.089 </z-m>
-    </center>
-    <axis>
-      <x>  0 </x>
-      <y> -1 </y>
-      <z>  0 </z>
-    </axis>
+    <type>material</type>
+    <object-name>fireLamps</object-name>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+    </emission>
   </animation>
 
   <animation>
+    <type>select</type>
+    <object-name>fireLamps</object-name>
+    <condition>
+      <equals>
+        <property>/controls/armament/trigger</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+	<!-- Control-lamps for breaks -->
+  <animation>
+    <type>material</type>
+    <object-name>lampBrake</object-name>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>lampBrake</object-name>
+    <condition>
+      <or>
+        <not-equals>
+          <property>/controls/gear/brake-parking</property>
+          <value>0</value>
+        </not-equals>
+        <not-equals>
+          <property>/controls/gear/brake-left</property>
+          <value>0</value>
+        </not-equals>
+        <not-equals>
+          <property>/controls/gear/brake-right</property>
+          <value>0</value>
+        </not-equals>
+      </or>
+    </condition>
+  </animation>
+
+<!-- Switches -->
+
+    <!-- Battery -->
+    <animation>
+        <type>rotate</type>
+        <object-name>switchBatt</object-name>
+        <property>/controls/electric/battery-switch</property>
+        <factor>80</factor>
+        <axis>
+            <x> 0.0</x>
+            <y>-1.0</y>
+            <z> 0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.044</x-m>
+            <y-m>-0.049</y-m>
+            <z-m>-0.083</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchBatt</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>
+                var battery = props.globals.getNode("/controls/electric/battery-switch", 1);
+                var starter = props.globals.getNode("/controls/engines/engine[0]/starter", 1);
+                if(battery.getValue() == 0){
+                  battery.setValue(1);
+                  starter.setValue(0);
+                }else{
+                  battery.setValue(0);
+                  starter.setValue(0);
+                }
+              </script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+      <type>material</type>
+      <object-name>lampBatt</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lampBatt</object-name>
+      <condition>
+        <equals>
+          <property>/controls/electric/battery-switch</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- Magneto -->
+    <animation>
+        <type>rotate</type>
+        <object-name>switchMagneto</object-name>
+        <property>/controls/engines/engine[0]/magnetos</property>
+        <factor>80</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.044</x-m>
+            <y-m>-0.025</y-m>
+            <z-m>-0.083</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchMagneto</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>
+                var magnetos = props.globals.getNode("/controls/engines/engine[0]/magnetos", 1);
+                var starter = props.globals.getNode("/controls/engines/engine[0]/starter", 1);
+                if(magnetos.getValue() == 0){
+                  magnetos.setValue(1);
+                  starter.setValue(0);
+                }else{
+                  magnetos.setValue(0);
+                  starter.setValue(0);
+                }
+              </script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+      <type>material</type>
+      <object-name>lampMagneto</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lampMagneto</object-name>
+      <condition>
+        <equals>
+          <property>/controls/engines/engine[0]/magnetos</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- Starter -->
+    <animation>
+        <type>translate</type>
+        <object-name>btnStart</object-name>
+        <property>/controls/engines/engine/starter</property>
+        <factor>0.1</factor>
+        <axis>
+            <x>-1.0</x>
+            <y> 0.0</y>
+            <z> 0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.044</x-m>
+            <y-m> 0.0</y-m>
+            <z-m>-0.083</z-m>
+        </center>
+    </animation>
+
+    <animation>
+      <type>pick</type>
+      <object-name>btnStart</object-name>
+      <visible>true</visible>
+      <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+         <command>nasal</command>
+           <script>
+             var magnetos = props.globals.getNode("/controls/engines/engine[0]/magnetos", 1);
+             var battery = props.globals.getNode("/controls/electric/battery-switch", 1);
+             var starter = props.globals.getNode("/controls/engines/engine[0]/starter", 1);
+
+             if(magnetos.getValue() > 0 and battery.getValue() > 0){
+               starter.setValue(1);
+             }else{
+               starter.setValue(1);
+               magnetos.setValue(0);
+             }
+          </script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>property-assign</command>
+            <property>/controls/engines/engine/starter</property>  
+            <value>0.0</value>
+          </binding>
+        </mod-up>
+      </action>
+    </animation>
+    
+    <!-- throttle column and lever -->   
+		<animation>
+		  <type>translate</type>
+		  <object-name>throttleLever</object-name>
+		  <property>/controls/engines/engine[0]/throttle</property>
+      <interpolation>
+        <entry><ind>0   </ind><dep>  0   </dep></entry>
+        <entry><ind>1   </ind><dep> -0.05</dep></entry>
+      </interpolation>
+		  <center>
+		    <x-m> 0 </x-m>
+		    <y-m> 0 </y-m>
+		    <z-m>-0.018 </z-m>
+		  </center>
+		  <axis>
+		    <x>-1 </x>
+		    <y> 0</y>
+		    <z> 0 </z>
+		  </axis>
+		</animation>
+
+		<animation>
+		  <type>pick</type>
+		  <object-name>throttleLever</object-name>
+		  <action>
+		    <button>0</button>
+		    <repeatable>true</repeatable>
+		    <binding>
+		      <condition>
+		          <not>
+		              <property>devices/status/keyboard/shift</property>
+		          </not>
+		      </condition>
+		      <command>property-adjust</command>
+		      <property>/controls/engines/engine/throttle</property>
+		      <step>-0.1</step>
+		      <min>0.0</min>
+		      <max>1</max>
+		    </binding>
+		    <binding>
+		      <condition>
+		         <property>devices/status/keyboard/shift</property>
+		      </condition>
+		      <command>property-adjust</command>
+		      <property>/controls/engines/engine/throttle</property>
+		      <step>-0.5</step>
+		      <min>0.0</min>
+		      <max>1</max>
+		    </binding>
+		  </action>
+		  <action>
+		    <button>1</button>
+		    <repeatable>true</repeatable>
+		    <binding>
+		      <condition>
+		          <not>
+		              <property>devices/status/keyboard/shift</property>
+		          </not>
+		      </condition>
+		      <command>property-adjust</command>
+		      <property>/controls/engines/engine/throttle</property>
+		      <step> 0.1</step>
+		      <min>0.0</min>
+		      <max>1</max>
+		    </binding>
+		    <binding>
+		      <condition>
+		         <property>devices/status/keyboard/shift</property>
+		      </condition>
+		      <command>property-adjust</command>
+		      <property>/controls/engines/engine/throttle</property>
+		      <step> 0.5</step>
+		      <min>0.0</min>
+		      <max>1</max>
+		    </binding>
+		  </action>
+		  <action>
+		    <button>3</button>
+		    <repeatable>true</repeatable>
+		    <binding>
+		      <condition>
+		          <not>
+		              <property>devices/status/keyboard/shift</property>
+		          </not>
+		      </condition>
+		      <command>property-adjust</command>
+		      <property>/controls/engines/engine/throttle</property>
+		      <step>-0.1</step>
+		      <min>0.0</min>
+		      <max>1</max>
+		    </binding>
+		    <binding>
+		      <condition>
+		         <property>devices/status/keyboard/shift</property>
+		      </condition>
+		      <command>property-adjust</command>
+		      <property>/controls/engines/engine/throttle</property>
+		      <step>-0.5</step>
+		      <min>0.0</min>
+		      <max>1</max>
+		    </binding>
+		  </action>
+		  <action>
+		    <button>4</button>
+		    <repeatable>true</repeatable>
+		    <binding>
+		      <condition>
+		          <not>
+		              <property>devices/status/keyboard/shift</property>
+		          </not>
+		      </condition>
+		      <command>property-adjust</command>
+		      <property>/controls/engines/engine/throttle</property>
+		      <step> 0.1</step>
+		      <min>0.0</min>
+		      <max>1</max>
+		    </binding>
+		    <binding>
+		      <condition>
+		         <property>devices/status/keyboard/shift</property>
+		      </condition>
+		      <command>property-adjust</command>
+		      <property>/controls/engines/engine/throttle</property>
+		      <step> 0.5</step>
+		      <min>0.0</min>
+		      <max>1</max>
+		    </binding>
+		  </action>
+		</animation>
+    
+    <!-- Mixture -->
+    <animation>
+        <type>translate</type>
+        <object-name>mixtureLever</object-name>
+        <property>/controls/engines/engine/mixture</property>
+        <interpolation>
+          <entry><ind>0   </ind><dep> 0   </dep></entry>
+          <entry><ind>0.75</ind><dep> 0   </dep></entry>
+          <entry><ind>1   </ind><dep> 0.03</dep></entry>
+        </interpolation>
+        <axis>
+            <x> 1.0</x>
+            <y> 0.0</y>
+            <z> 0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.0</x-m>
+            <y-m> 0.0</y-m>
+            <z-m>-0.083</z-m>
+        </center>
+    </animation>
+    
+    
+   <animation>
     <type>pick</type>
-    <object-name>switchGlaswiper</object-name>
+    <object-name>mixtureLever</object-name>
+    <visible>true</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/glass-effect</property>
+        <property>/controls/switches/mixture</property>
+      </binding>
+    </action>
+
+    <action>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <condition>
+            <not>
+                <property>devices/status/keyboard/shift</property>
+            </not>
+        </condition>
+        <command>property-adjust</command>
+        <property>/controls/engines/engine/mixture</property>
+        <step>-0.01</step>
+        <min>0.75</min>
+        <max>1</max>
       </binding>
       <binding>
-        <command>property-toggle</command>
-        <property>/sim/sound/switch</property>
+        <condition>
+           <property>devices/status/keyboard/shift</property>
+        </condition>
+        <command>property-adjust</command>
+        <property>/controls/engines/engine/mixture</property>
+        <step>-0.1</step>
+        <min>0.75</min>
+        <max>1</max>
+      </binding>
+    </action>
+    <action>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <condition>
+            <not>
+                <property>devices/status/keyboard/shift</property>
+            </not>
+        </condition>
+        <command>property-adjust</command>
+        <property>/controls/engines/engine/mixture</property>
+        <step> 0.01</step>
+        <min>0.75</min>
+        <max>1</max>
+      </binding>
+      <binding>
+        <condition>
+           <property>devices/status/keyboard/shift</property>
+        </condition>
+        <command>property-adjust</command>
+        <property>/controls/engines/engine/mixture</property>
+        <step> 0.1</step>
+        <min>0.75</min>
+        <max>1</max>
       </binding>
     </action>
   </animation>
+
+  <!-- The smoke settings and actions -->
+  <!-- First the main switch on/off for the smoke on the center top of panel -->
+    <animation>
+        <type>rotate</type>
+        <object-name>switchSmoke</object-name>
+        <property>/smoke/active</property>
+        <factor>90</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.046</x-m>
+            <y-m>-0.018</y-m>
+            <z-m> 0.082</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchSmoke</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>i16.SmokeToggle()</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+      <type>material</type>
+      <object-name>lampSmoke</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lampSmoke</object-name>
+      <condition>
+        <equals>
+          <property>/smoke/active</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- the 4 posibilities on the color selector at top main smoke panel -->
+    <!-- 1st color direct select on knob border -->
+    <animation>
+      <type>pick</type>
+      <object-name>sel1stColor</object-name>
+      <visible>false</visible>
+      <action>
+        <name>select first color</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeSelColor(0)</script>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/sim/sound/switch</property>
+        </binding>
+      </action>
+    </animation>
+    <!-- snd color direct select on knob border -->
+    <animation>
+      <type>pick</type>
+      <object-name>sel2ndColor</object-name>
+      <visible>false</visible>
+      <action>
+        <name>select second color</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeSelColor(1)</script>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/sim/sound/switch</property>
+        </binding>
+      </action>
+    </animation>    
+    <!-- 3rd color direct select on knob border -->
+    <animation>
+      <type>pick</type>
+      <object-name>sel3rdColor</object-name>
+      <visible>false</visible>
+      <action>
+        <name>select third color</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeSelColor(2)</script>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/sim/sound/switch</property>
+        </binding>
+      </action>
+    </animation>
+    <!-- 4th color direct select on knob border -->
+    <animation>
+      <type>pick</type>
+      <object-name>sel4thColor</object-name>
+      <visible>false</visible>
+      <action>
+        <name>select fourth color</name>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>i16.SmokeSelColor(3)</script>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/sim/sound/switch</property>
+        </binding>
+      </action>
+    </animation>
+
+
+    <!-- the main smoke knob for selecting the colors on top center of the panel -->
+    <animation>
+        <type>rotate</type>
+        <object-name>knobSmoke</object-name>
+        <property>/smoke/color</property>
+        <interpolation>
+          <entry><ind>0</ind><dep>0</dep></entry>
+          <entry><ind>1</ind><dep> -90.0</dep></entry>
+          <entry><ind>2</ind><dep> -180.0</dep></entry>
+          <entry><ind>3</ind><dep>-270.0</dep></entry>
+        </interpolation>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.050</x-m>
+            <y-m> 0.012</y-m>
+            <z-m> 0.092</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>knobSmoke</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>i16.SmokeColor()</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+  <!-- ####################  THE COLOR MIXER ############################ -->
+    <!-- ############# 1st color switch ###############-->
+    <animation>
+        <type>rotate</type>
+        <object-name>switch1stColor</object-name>
+        <property>/smoke/colors/color[0]/scale</property>
+        <factor>90</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.045</x-m>
+            <y-m>-0.013</y-m>
+            <z-m> 0.027</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switch1stColor</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>i16.ChangeColor(0)</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- 1st color control lamp/ control plane -->
+    <animation>
+      <type>material</type>
+      <object-name>lamp1stColor</object-name>
+      <object-name>plane1stColor</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lamp1stColor</object-name>
+      <object-name>plane1stColor</object-name>
+      <condition>
+        <equals>
+          <property>/smoke/colors/color[0]/scale</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- ############# 2nd color switch ###############-->
+    <animation>
+        <type>rotate</type>
+        <object-name>switch2ndColor</object-name>
+        <property>/smoke/colors/color[1]/scale</property>
+        <factor>90</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.045</x-m>
+            <y-m>-0.013</y-m>
+            <z-m> 0.008</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switch2ndColor</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>i16.ChangeColor(1)</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- 2nd color control lamp/ control plane -->
+    <animation>
+      <type>material</type>
+      <object-name>lamp2ndColor</object-name>
+      <object-name>plane2ndColor</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lamp2ndColor</object-name>
+      <object-name>plane2ndColor</object-name>
+      <condition>
+        <equals>
+          <property>/smoke/colors/color[1]/scale</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- ############# 3rd color switch ###############-->
+    <animation>
+        <type>rotate</type>
+        <object-name>switch3rdColor</object-name>
+        <property>/smoke/colors/color[2]/scale</property>
+        <factor>90</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.044</x-m>
+            <y-m>-0.013</y-m>
+            <z-m>-0.013</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switch3rdColor</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>i16.ChangeColor(2)</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- 3rd color control lamp/ control plane -->
+    <animation>
+      <type>material</type>
+      <object-name>lamp3rdColor</object-name>
+      <object-name>plane3rdColor</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lamp3rdColor</object-name>
+      <object-name>plane3rdColor</object-name>
+      <condition>
+        <equals>
+          <property>/smoke/colors/color[2]/scale</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- ############# 4th color switch ###############-->
+    <animation>
+        <type>rotate</type>
+        <object-name>switch4thColor</object-name>
+        <property>/smoke/colors/color[3]/scale</property>
+        <factor>90</factor>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.044</x-m>
+            <y-m>-0.013</y-m>
+            <z-m>-0.033</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switch4thColor</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>nasal</command>
+              <script>i16.ChangeColor(3)</script>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- 2nd color control lamp/ control plane -->
+    <animation>
+      <type>material</type>
+      <object-name>lamp4thColor</object-name>
+      <object-name>plane4thColor</object-name>
+      <emission>
+        <red>   1 </red>
+        <green> 0 </green>
+        <blue>  0 </blue>
+      </emission>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lamp4thColor</object-name>
+      <object-name>plane4thColor</object-name>
+      <condition>
+        <equals>
+          <property>/smoke/colors/color[3]/scale</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- ########## the RGB - Knobs ###########-->
+
+    <!-- knob for red RGB setting-->
+    <animation>
+        <type>rotate</type>
+        <object-name>knobRed</object-name>
+        <property>/smoke/colors/knob-red</property>
+        <interpolation>
+          <entry><ind>0</ind><dep>30</dep></entry>
+          <entry><ind>1</ind><dep>330</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.047</x-m>
+            <y-m>-0.169</y-m>
+            <z-m>-0.059</z-m>
+        </center>
+    </animation>
+
+    <animation>
+      <type>pick</type>
+      <object-name>scrollKnobRed</object-name>
+      <visible>false</visible>
+      <action>
+        <name>small decrease (scrollwheel)</name>
+        <button>3</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>i16.KnobScroll(0.1,"red")</script>
+        </binding>
+      </action>
+      <action>
+        <name>small increase (scrollwheel)</name>
+        <button>4</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>i16.KnobScroll(-0.1,"red")</script>
+        </binding>
+      </action>
+    </animation>
+
+    <!-- knob for green RGB setting-->
+    <animation>
+        <type>rotate</type>
+        <object-name>knobGreen</object-name>
+        <property>/smoke/colors/knob-green</property>
+        <interpolation>
+          <entry><ind>0</ind><dep>30</dep></entry>
+          <entry><ind>1</ind><dep>330</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.047</x-m>
+            <y-m>-0.148</y-m>
+            <z-m>-0.059</z-m>
+        </center>
+    </animation>
+
+    <animation>
+      <type>pick</type>
+      <object-name>scrollKnobGreen</object-name>
+      <visible>false</visible>
+      <action>
+        <name>small decrease (scrollwheel)</name>
+        <button>3</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>i16.KnobScroll(0.1,"green")</script>
+        </binding>
+      </action>
+      <action>
+        <name>small increase (scrollwheel)</name>
+        <button>4</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>i16.KnobScroll(-0.1,"green")</script>
+        </binding>
+      </action>
+    </animation>
+
+    <!-- knob for blue RGB setting-->
+    <animation>
+        <type>rotate</type>
+        <object-name>knobBlue</object-name>
+        <property>/smoke/colors/knob-blue</property>
+        <interpolation>
+          <entry><ind>0</ind><dep>30</dep></entry>
+          <entry><ind>1</ind><dep>330</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.047</x-m>
+            <y-m>-0.125</y-m>
+            <z-m>-0.059</z-m>
+        </center>
+    </animation>
+
+    <animation>
+      <type>pick</type>
+      <object-name>scrollKnobBlue</object-name>
+      <visible>false</visible>
+      <action>
+        <name>small decrease (scrollwheel)</name>
+        <button>3</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>i16.KnobScroll(0.1,"blue")</script>
+        </binding>
+      </action>
+      <action>
+        <name>small increase (scrollwheel)</name>
+        <button>4</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>i16.KnobScroll(-0.1,"blue")</script>
+        </binding>
+      </action>
+    </animation>
+
+    <!-- ############# THE GLASWIPER ###############-->
+    <animation>
+        <type>rotate</type>
+        <object-name>switchGlaswiper</object-name>
+        <property>/controls/glass-effect</property>
+        <factor>-60</factor>
+        <axis>
+            <x> 0.0</x>
+            <y>-1.0</y>
+            <z> 0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.040</x-m>
+            <y-m>-0.166</y-m>
+            <z-m>-0.089</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchGlaswiper</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/glass-effect</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/sound/switch</property>
+            </binding>
+        </action>
+    </animation>
+
+
 
 </PropertyList>
 

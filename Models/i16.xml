@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
 
@@ -7,55 +7,53 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/Polikarpov-I16/Models/Liveries", 10);
-
+<!--
       var self = cmdarg();
 
-      self.getNode("instrumentation/doors/crew/position-norm", 1).alias(self.getNode("sim/multiplay/generic/float[0]", 1));
-      self.getNode("instrumentation/doors/passenger/position-norm", 1).alias(self.getNode("sim/multiplay/generic/float[1]", 1));
-
-      self.getNode("smoke/active", 1).alias(self.getNode("sim/multiplay/generic/int[6]", 1));
-      self.getNode("smoke/particlepersec", 1).alias(self.getNode("sim/multiplay/generic/int[7]", 1));
-      self.getNode("smoke/colors/knob-red", 1).alias(self.getNode("sim/multiplay/generic/float[3]", 1));
-      self.getNode("smoke/colors/knob-green", 1).alias(self.getNode("sim/multiplay/generic/float[4]", 1));
-      self.getNode("smoke/colors/knob-blue", 1).alias(self.getNode("sim/multiplay/generic/float[5]", 1));
-      self.getNode("smoke/particlepersec", 1).setValue(50);
+      self.getNode("smoke/active").alias(self.getNode("sim/multiplay/generic/int[6]"));
+      self.getNode("para/jump-signal").alias(self.getNode("sim/multiplay/generic/int[7]"));
+      self.getNode("smoke/red").alias(self.getNode("sim/multiplay/generic/float[3]"));
+      self.getNode("smoke/green").alias(self.getNode("sim/multiplay/generic/float[4]"));
+      self.getNode("smoke/blue").alias(self.getNode("sim/multiplay/generic/float[5]"));
+      self.getNode("smoke/particlepersec").setValue(50);
+-->
     </load>
+
     <unload>
       livery_update.stop();
-      crew_door.unalias();
-      passenger_door.unalias();
     </unload>
   </nasal>
 
+
   <animation>
     <!-- Objets opaques -->
-    <object-name>fuselage</object-name>
-    <object-name>ailes</object-name>
+    <object-name>Cylinder.006</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
-    <object-name>bol</object-name>
-    <object-name>porteG</object-name>
-    <object-name>porteD</object-name>
-    <object-name>derive</object-name>
-    <object-name>echappes</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>direction</object-name>
-    <object-name>cacheair</object-name>
-    <object-name>porteG1</object-name>
-    <object-name>porteG2</object-name>
-    <object-name>porteD1</object-name>
-    <object-name>porteD2</object-name>
-    <object-name>bosses</object-name>
-    <object-name>pito</object-name>
-
-    <object-name>trous</object-name>
-    <object-name>helice</object-name>
+    <object-name>ailes</object-name>
     <object-name>axeG</object-name>
     <object-name>roueG</object-name>
     <object-name>axeD</object-name>
     <object-name>roueD</object-name>
     <object-name>axeA</object-name>
     <object-name>roueA</object-name>
+    <object-name>bol</object-name>
+    <object-name>bosses</object-name>
+    <object-name>cacheair</object-name>
+    <object-name>derive</object-name>
+    <object-name>direction</object-name>
+    <object-name>echappes</object-name>
+    <object-name>fuselage</object-name>
+    <object-name>helice</object-name>
+    <object-name>pito</object-name>
+		<object-name>porteG</object-name>
+		<object-name>porteD</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>trous</object-name>
 
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
@@ -65,37 +63,90 @@
 
   <animation>
     <type>material</type>
-    <object-name>fuselage</object-name>
-    <object-name>ailes</object-name>
+    <object-name>Cylinder.006</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
-    <object-name>bol</object-name>
-    <object-name>porteG</object-name>
-    <object-name>porteD</object-name>
-    <object-name>derive</object-name>
-    <object-name>echappes</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>direction</object-name>
-    <object-name>cacheair</object-name>
-    <object-name>porteG1</object-name>
-    <object-name>porteG2</object-name>
-    <object-name>porteD1</object-name>
-    <object-name>porteD2</object-name>
-    <object-name>bosses</object-name>
-    <object-name>pito</object-name>
-
-    <object-name>trous</object-name>
-    <object-name>helice</object-name>
+    <object-name>ailes</object-name>
     <object-name>axeG</object-name>
     <object-name>roueG</object-name>
     <object-name>axeD</object-name>
     <object-name>roueD</object-name>
     <object-name>axeA</object-name>
     <object-name>roueA</object-name>
+    <object-name>bol</object-name>
+    <object-name>bosses</object-name>
+    <object-name>cacheair</object-name>
+    <object-name>derive</object-name>
+    <object-name>direction</object-name>
+    <object-name>echappes</object-name>
+    <object-name>fuselage</object-name>
+    <object-name>helice</object-name>
+    <object-name>pito</object-name>
+		<object-name>porteG</object-name>
+		<object-name>porteD</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>trous</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Cylinder.006</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>ailes</object-name>
+    <object-name>axeG</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeA</object-name>
+    <object-name>roueA</object-name>
+    <object-name>bol</object-name>
+    <object-name>bosses</object-name>
+    <object-name>cacheair</object-name>
+    <object-name>derive</object-name>
+    <object-name>direction</object-name>
+    <object-name>echappes</object-name>
+    <object-name>fuselage</object-name>
+    <object-name>helice</object-name>
+    <object-name>pito</object-name>
+		<object-name>porteG</object-name>
+		<object-name>porteD</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>trous</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+
+    <specular>
+      <condition>
+				<not><property>sim/rendering/rembrandt/enabled</property></not>
+			</condition>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+      <condition>
+				<not><property>sim/rendering/rembrandt/enabled</property></not>
+			</condition>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </emission>
   </animation>
 
   <effect>
@@ -106,7 +157,6 @@
     <object-name>aileronD</object-name>
     <object-name>bol</object-name>
     <object-name>porteG</object-name>
-    <object-name>porteD</object-name>
     <object-name>derive</object-name>
     <object-name>echappes</object-name>
     <object-name>profondeur</object-name>
@@ -118,6 +168,33 @@
     <object-name>porteD2</object-name>
     <object-name>bosses</object-name>
     <object-name>pito</object-name>
+    <condition>
+			<not><property>sim/rendering/rembrandt/enabled</property></not>
+		</condition>
+  </effect>
+  
+  <effect>
+	  <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>bol</object-name>
+    <object-name>porteG</object-name>
+    <object-name>derive</object-name>
+    <object-name>echappes</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>cacheair</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>bosses</object-name>
+    <object-name>pito</object-name>
+    <condition>
+				<property>sim/rendering/rembrandt/enabled</property>
+		</condition>
   </effect>
 
   <animation>
@@ -133,26 +210,13 @@
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
   </animation>
-
-  <!-- Smoke -->
-  <model>
-    <path>Aircraft/Polikarpov-I16/Models/Effects/smoke/smoke.xml</path>
-    <offsets>
-      <x-m> -2.00 </x-m>
-      <y-m>  0.40 </y-m>
-      <z-m> -1.00 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Une ombre pour OSG -->
-  <model>
-    <path>Aircraft/Polikarpov-I16/Models/shadow.xml</path>
-    <offsets>
-      <x-m>  0.000 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -1.016 </z-m>
-    </offsets>
-  </model>
+  
+    <!-- working for Rembrandt -->
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+	</effect>
 
   <!-- Cranking effects -->
   <!-- Left -->
@@ -162,6 +226,9 @@
       <x-m> -2.266 </x-m>
       <y-m> -0.287 </y-m>
       <z-m>  0.563 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -171,6 +238,9 @@
       <x-m> -2.266 </x-m>
       <y-m> -0.581 </y-m>
       <z-m>  0.204 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -180,6 +250,9 @@
       <x-m> -2.266 </x-m>
       <y-m> -0.507 </y-m>
       <z-m> -0.304 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -189,6 +262,9 @@
       <x-m> -2.266 </x-m>
       <y-m> -0.225 </y-m>
       <z-m> -0.535 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -199,6 +275,9 @@
       <x-m> -2.266 </x-m>
       <y-m>  0.287 </y-m>
       <z-m>  0.563 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -208,6 +287,9 @@
       <x-m> -2.266 </x-m>
       <y-m>  0.581 </y-m>
       <z-m>  0.204 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -217,6 +299,9 @@
       <x-m> -2.266 </x-m>
       <y-m>  0.507 </y-m>
       <z-m> -0.304 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -226,6 +311,21 @@
       <x-m> -2.266 </x-m>
       <y-m>  0.225 </y-m>
       <z-m> -0.535 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Polikarpov-I16/Models/Effects/fire.xml</path>
+    <offsets>
+      <x-m> -2.266 </x-m>
+      <y-m>  0.225 </y-m>
+      <z-m> -0.535 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -287,17 +387,46 @@
     </offsets>
   </model>
 
-  <!-- Intérieur -->
+  <!-- Interieur -->
   <model>
     <path>Aircraft/Polikarpov-I16/Models/Interior/interior.xml</path>
+    <offsets>
+      <x-m>  0 </x-m>
+      <y-m>  0 </y-m>
+      <z-m>  0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
   </model>
 
   <!-- Imatriculation -->
   <model>
     <path>Aircraft/Polikarpov-I16/Models/Immat/immat.xml</path>
+    <offsets>
+      <x-m>  0 </x-m>
+      <y-m>  0 </y-m>
+      <z-m>  0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+  
+  <!-- Interieur Lights -->
+  <model>
+    <path>Aircraft/Polikarpov-I16/Models/lights/innerLight.xml</path>
+    <offsets>
+      <x-m>  0 </x-m>
+      <y-m>  0 </y-m>
+      <z-m>  0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
   </model>
 
-  <!-- L'hélice --> 
+  <!-- L'helice --> 
   <animation>
     <name>HeliceComplete</name>
     <object-name>propdisc</object-name>
@@ -306,7 +435,7 @@
     <object-name>bol</object-name>
   </animation>
 
-  <!-- Séléction de l'objet visible en fonction des rpm -->
+  <!-- Selection de l'objet visible en fonction des rpm -->
   <animation>
     <type>select</type>
     <object-name>propdisc</object-name>
@@ -367,7 +496,7 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
-    <property>surface-positions/left-aileron-pos-norm</property>
+    <property>/controls/flight/aileron</property>
     <factor> 20 </factor>
     <axis>
       <x1-m> -0.594 </x1-m>
@@ -382,8 +511,8 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>
-    <property>surface-positions/right-aileron-pos-norm</property>
-    <factor> 20 </factor>
+    <property>/controls/flight/aileron</property>
+    <factor> -20 </factor>
     <axis>
       <x1-m> -0.219 </x1-m>
       <y1-m>  1.637 </y1-m>
@@ -398,8 +527,8 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronG</object-name>
-    <property>surface-positions/flaperons-pos-norm</property>
-    <factor> 15 </factor>
+    <property>/controls/flight/flaps</property>
+    <factor> 60 </factor>
     <axis>
       <x1-m> -0.594 </x1-m>
       <y1-m> -4.032 </y1-m>
@@ -413,8 +542,8 @@
   <animation>
     <type>rotate</type>
     <object-name>aileronD</object-name>
-    <property>surface-positions/flaperons-pos-norm</property>
-    <factor> 15 </factor>
+    <property>/controls/flight/flaps</property>
+    <factor> 60 </factor>
     <axis>
       <x1-m> -0.219 </x1-m>
       <y1-m>  1.637 </y1-m>
@@ -429,7 +558,7 @@
   <animation>
     <type>rotate</type>
     <object-name>profondeur</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
+    <property>/controls/flight/elevator</property>
     <factor> 20 </factor>
     <center>
       <x-m> 2.610 </x-m>
@@ -447,7 +576,7 @@
   <animation>
     <type>rotate</type>
     <object-name>direction</object-name>
-    <property>surface-positions/rudder-pos-norm</property>
+    <property>/controls/flight/rudder</property>
     <factor> 20 </factor>
     <center>
       <x-m> 2.444 </x-m>
@@ -464,7 +593,7 @@
   <animation>
     <type>rotate</type>
     <object-name>porteG</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>/sim/multiplay/generic/float[0]</property>
     <factor> 175 </factor>
     <axis>
       <x1-m> -0.086 </x1-m>
@@ -476,22 +605,7 @@
     </axis>
   </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>porteD</object-name>
-    <property>instrumentation/doors/passenger/position-norm</property>
-    <factor> 175 </factor>
-    <axis>
-      <x1-m>  0.214 </x1-m>
-      <y1-m>  0.390 </y1-m>
-      <z1-m>  0.408 </z1-m>
-      <x2-m> -0.086 </x2-m>
-      <y2-m>  0.411 </y2-m>
-      <z2-m>  0.408 </z2-m>
-    </axis>
-  </animation>
-
-  <!-- Sortie/Rentrée du train -->
+  <!-- Sortie/Rentree du train -->
   <animation>
     <name>TrainG</name>
     <object-name>axeG</object-name>
@@ -746,6 +860,19 @@
       <z>  0 </z>
     </axis>
   </animation>
+
+  <!-- Smoke -->
+  <model>
+    <path>Aircraft/Polikarpov-I16/Models/smoke.xml</path>
+    <offsets>
+      <x-m>-2.00</x-m>
+      <y-m> 0.40 </y-m>
+      <z-m>-1.00</z-m>
+      <roll-deg>0</roll-deg>
+      <pitch-deg>0</pitch-deg>
+      <heading-deg>0</heading-deg>
+    </offsets>
+  </model>
 
 </PropertyList>
 

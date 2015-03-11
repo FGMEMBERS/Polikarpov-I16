@@ -70,6 +70,15 @@
           <script>i16.SmokeColor()</script>
         </binding>
       </key>
+      <!-- pilot goes out to save his life -->
+      <key n="60">
+       <name>&lt;</name>
+       <desc>Jump signal</desc>
+        <binding>
+          <command>nasal</command>
+          <script>i16.JumpOut()</script>
+        </binding>
+      </key>
 
 </PropertyList>
 

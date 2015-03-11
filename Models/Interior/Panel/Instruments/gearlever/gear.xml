@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>gear.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>gearLever</object-name>
+    <object-name>gearBox</object-name>
+    <object-name>gearLock</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <!-- GearsLever -->
+  <animation>
+    <object-name>gearLever</object-name>
+    <object-name>gearLock</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>gearLever</object-name>
+    <property>gear/gear[1]/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 9000 </dep></entry>
+      <entry><ind> 1 </ind><dep>     0 </dep></entry>
+    </interpolation>
+    <factor> 9000 </factor>
+    <center>
+      <x-m>  0.00000 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.01082 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>gearLock</object-name>
+    <property>gear/gear[1]/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 30 </dep></entry>
+      <entry><ind> 1 </ind><dep>-30 </dep></entry>
+    </interpolation>
+    <factor> 60 </factor>
+    <center>
+      <x-m>  0.00000 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.01082 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>gearLever</object-name>
+    <object-name>gearLock</object-name>
+    <object-name>gearBox</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/gear/gear-down</property>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>
+

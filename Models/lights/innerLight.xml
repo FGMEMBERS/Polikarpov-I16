@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+	<path>lights.ac</path>
+
+	<!-- No preview for fgrun-->
+	<animation>
+		<object-name>innerLight</object-name>
+		<nopreview/>
+	</animation>
+
+	<!-- Rembrand - Search light -->
+	<animation>
+		<type>select</type>
+		<object-name>innerLight</object-name>
+    <condition>
+      <and>
+			  <property>/sim/rendering/rembrandt/enabled</property>
+			  <property>/controls/electric/battery-switch</property>
+			  <property>/sim/current-view/internal</property>
+			  <greater-than>
+					<property>/sim/time/sun-angle-rad</property>			  
+			  	<value>1.57</value>
+			  </greater-than>
+			</and>
+    </condition>
+	</animation>
+
+	<!-- cockpit light  -->
+	<animation>
+		<type>light</type>
+		<light-type>point</light-type>
+		<name>InnerLight</name>
+		<object-name>innerLight</object-name>
+		<position>
+			<x>0.80</x>
+			<y>0.0</y>
+			<z>0.32</z>
+		</position>
+		<dim-factor>
+			<property>/sim/time/sun-angle-rad</property>
+      <factor>0.08</factor>
+      <offset>0</offset>
+      <min>0</min>
+      <max>1</max>
+    </dim-factor>
+		<ambient>
+			<r>0.5</r>
+			<g>0.5</g>
+			<b>0.2</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>1.0</r>
+			<g>1.0</g>
+			<b>1.0</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>1.0</r>
+			<g>1.0</g>
+			<b>1.0</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.002</l>
+			<q>0.00005</q>
+		</attenuation>
+		<exponent>40</exponent>
+		<near-m>0.05</near-m>
+		<far-m>250</far-m>
+		<cutoff>40</cutoff>
+	</animation>
+	
+</PropertyList>
